@@ -11,7 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {Table, Row, Rows} from 'react-native-table-component';
-import RNPickerSelect from 'react-native-picker-select';
+import {Picker} from '@react-native-picker/picker';
 
 const alertData = [
   {date: '07/04/2025', time: '09:44', alert: 'Water Tank Might Overflow - 96%'},
@@ -28,8 +28,8 @@ const alertData = [
 
 const Alerts = () => {
   const navigation = useNavigation();
-
   const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
+  const [selectedTank, setSelectedTank] = useState<string | null>(null);
 
   const tableHead = ['Date', 'Time', 'Alerts'];
   const tableData = alertData.map(item => [item.date, item.time, item.alert]);
@@ -51,31 +51,30 @@ const Alerts = () => {
       <View style={styles.dropdownContainer}>
         <View style={styles.dropdown}>
           <Text style={styles.label}>Select Building/Tower:</Text>
-          {/* <RNPickerSelect
-            value={selectedBuilding}
-            onValueChange={value => setSelectedBuilding(value)}
-            items={[
-              {label: 'Cedar', value: 'Cedar'},
-              {label: 'Maple', value: 'Maple'},
-              {label: 'Oak', value: 'Oak'},
-            ]}
-            style={pickerSelectStyles}
-            useNativeAndroidPickerStyle={false}
-          /> */}
+          <View style={styles.pickerWrapper}>
+            <Picker
+              selectedValue={selectedBuilding}
+              onValueChange={itemValue => setSelectedBuilding(itemValue)}>
+              <Picker.Item label="Select..." value={null} />
+              <Picker.Item label="Cedar" value="Cedar" />
+              <Picker.Item label="Maple" value="Maple" />
+              <Picker.Item label="Oak" value="Oak" />
+            </Picker>
+          </View>
         </View>
+
         <View style={styles.dropdown}>
           <Text style={styles.label}>Select Tank:</Text>
-          {/* <RNPickerSelect
-            value={selectedTank}
-            onValueChange={value => setSelectedTank(value)}
-            items={[
-              {label: 'CedarSupply(OHT)', value: 'CedarSupply(OHT)'},
-              {label: 'CedarSupply(UGT)', value: 'CedarSupply(UGT)'},
-              {label: 'Backup Tank', value: 'Backup Tank'},
-            ]}
-            style={pickerSelectStyles}
-            useNativeAndroidPickerStyle={false}
-          /> */}
+          <View style={styles.pickerWrapper}>
+            <Picker
+              selectedValue={selectedTank}
+              onValueChange={itemValue => setSelectedTank(itemValue)}>
+              <Picker.Item label="Select..." value={null} />
+              <Picker.Item label="CedarSupply(OHT)" value="CedarSupply(OHT)" />
+              <Picker.Item label="CedarSupply(UGT)" value="CedarSupply(UGT)" />
+              <Picker.Item label="Backup Tank" value="Backup Tank" />
+            </Picker>
+          </View>
         </View>
       </View>
 
@@ -128,9 +127,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingBottom: 10,
     flexDirection: 'row',
+    gap: 15,
   },
   dropdown: {
     marginBottom: 10,
+  },
+  pickerWrapper: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    backgroundColor: '#f9f9f9',
+    width: 150,
   },
   label: {
     fontSize: 14,
@@ -155,33 +162,5 @@ const styles = StyleSheet.create({
     margin: 6,
     color: 'black',
     textAlign: 'center',
-  },
-});
-const pickerSelectStyles = StyleSheet.create({
-  inputAndroid: {
-    fontSize: 16,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    color: 'black',
-    paddingRight: 30,
-    backgroundColor: '#f9f9f9',
-    marginBottom: 10,
-    width: 150,
-  },
-  inputIOS: {
-    fontSize: 16,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
-    backgroundColor: '#f9f9f9',
-    marginBottom: 10,
-    width: 150, // adjust based on your layout
   },
 });
