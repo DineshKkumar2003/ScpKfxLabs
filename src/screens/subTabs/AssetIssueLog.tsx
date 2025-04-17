@@ -12,13 +12,15 @@ import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
+import {Row, Rows, Table} from 'react-native-table-component';
 
 const AssetIssueLog = () => {
   const navigation = useNavigation();
   const [assetType, setAssetType] = useState('');
   const [status, setStatus] = useState('');
   const [timePeriod, setTimePeriod] = useState('');
-
+  const tableHead = ['Date & Time', 'Asset Info', 'Comments', 'Status'];
+  const tableData: string[][] = [];
   return (
     <View style={{backgroundColor: 'white', flex: 1}}>
       <SafeAreaView
@@ -42,8 +44,9 @@ const AssetIssueLog = () => {
               onValueChange={setAssetType}
               items={[
                 {label: 'All Types', value: ''},
-                {label: 'HVAC', value: 'hvac'},
-                {label: 'Electrical', value: 'electrical'},
+                {label: 'DG', value: 'dg'},
+                {label: 'PUMP', value: 'pump'},
+                {label: 'WATER', value: 'water'},
               ]}
               style={pickerSelectStyles}
               useNativeAndroidPickerStyle={false} // You can try removing this if issues arise on Android
@@ -57,7 +60,10 @@ const AssetIssueLog = () => {
               onValueChange={setStatus}
               items={[
                 {label: 'All Statuses', value: ''},
-                {label: 'Open', value: 'open'},
+                {label: 'New', value: 'new'},
+                {label: 'In Progress', value: 'in-progress'},
+                {label: 'On Hold', value: 'on-hold'},
+                {label: 'Resolved', value: 'resolved'},
                 {label: 'Closed', value: 'closed'},
               ]}
               style={pickerSelectStyles}
@@ -86,19 +92,30 @@ const AssetIssueLog = () => {
         </View>
 
         {/* Table */}
-        <Text style={styles.sectionTitle}>Asset Issue Logs</Text>
-        <View style={styles.table}>
-          <View style={styles.tableRow}>
-            <Text style={styles.tableHeader}>Date and Time</Text>
-            <Text style={styles.tableHeader}>Asset Info</Text>
-            <Text style={styles.tableHeader}>Comments</Text>
-            <Text style={styles.tableHeader}>Status</Text>
-          </View>
 
-          <View style={styles.tableRow}>
-            <Text style={styles.noLogs}>No logs found.</Text>
-          </View>
-        </View>
+        <ScrollView style={{}}>
+          <Table borderStyle={{borderWidth: 1.5, borderColor: '#ccc'}}>
+            <Row
+              data={tableHead}
+              style={styles.head}
+              textStyle={styles.headText}
+              flexArr={[3, 3, 6, 3]}
+            />
+            {tableData.length > 0 ? (
+              <Rows
+                data={tableData}
+                style={styles.row}
+                flexArr={[3, 3, 6, 3]}
+              />
+            ) : (
+              <Row
+                data={['No Logs Found']}
+                style={styles.emptyRow}
+                textStyle={styles.noDataText}
+              />
+            )}
+          </Table>
+        </ScrollView>
       </ScrollView>
     </View>
   );
@@ -124,7 +141,7 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 16,
-    backgroundColor: '#0d1632',
+    backgroundColor: '#fff',
     flexGrow: 1,
   },
   filterContainer: {
@@ -136,15 +153,15 @@ const styles = StyleSheet.create({
   },
   pickerWrapper: {
     width: '30%',
-    minWidth: 120,
+    minWidth: 150,
   },
   label: {
-    color: 'white',
+    color: 'black',
     marginBottom: 5,
     fontWeight: '600',
   },
   button: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#98A869',
     paddingHorizontal: 16,
     justifyContent: 'center',
     borderRadius: 5,
@@ -161,27 +178,30 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
   },
-  table: {
-    borderWidth: 1,
-    borderColor: '#ccc',
+  //tableContainer: {padding: 10},
+  head: {
+    height: 60,
+    backgroundColor: '#f1f8ff',
   },
-  tableRow: {
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
-  },
-  tableHeader: {
-    flex: 1,
-    padding: 10,
-    color: 'white',
+
+  headText: {
+    margin: 6,
     fontWeight: 'bold',
+    color: 'black',
     textAlign: 'center',
-    backgroundColor: '#122042',
   },
-  noLogs: {
-    flex: 1,
-    color: 'white',
-    padding: 10,
+  emptyRow: {
+    height: 50,
+    backgroundColor: 'white',
+  },
+  noDataText: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: '#666',
+  },
+  row: {
+    margin: 6,
+    color: 'black',
     textAlign: 'center',
   },
 });
@@ -189,6 +209,8 @@ const styles = StyleSheet.create({
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
     backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#ccc',
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 12,
@@ -196,6 +218,8 @@ const pickerSelectStyles = StyleSheet.create({
   },
   inputAndroid: {
     backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#ccc',
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 12,

@@ -9,6 +9,7 @@ import AssetIssueLog from '../screens/subTabs/AssetIssueLog';
 import Reports from '../screens/subTabs/Reports';
 import Alerts from '../screens/subTabs/Alerts';
 import Indicators from '../screens/subTabs/Indicators';
+import ChangePassword from '../screens/subTabs/ChangePassword';
 import WaterManagementDashboard from '../screens/subTabs/WaterManagementDashboard';
 
 const WaterManagementStack = () => {
@@ -50,6 +51,11 @@ const WaterManagementStack = () => {
       <Stack.Screen
         name="WaterManagementDasboard"
         component={WaterManagementDashboard}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ChangePassword"
+        component={ChangePassword}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

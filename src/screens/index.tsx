@@ -8,6 +8,7 @@ export type RootStackParamList = {
   Alerts: undefined;
   Indicators: undefined;
   WaterManagementDasboard: undefined;
+  ChangePassword: undefined;
 };
 export type BottomTabParamList = {
   DGMonitoring: undefined;

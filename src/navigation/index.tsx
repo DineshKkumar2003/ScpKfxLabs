@@ -40,9 +40,15 @@ const TabNavigator = () => {
       screenOptions={{
         tabBarStyle: {
           backgroundColor: 'white',
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
-          marginBottom: 0,
+          borderRadius: 30,
+          marginLeft: '5%',
+          marginRight: '5%',
+          position: 'absolute',
+          width: '90%',
+          height: 60,
+          paddingBottom: 5,
+          paddingTop: 5,
+          marginBottom: 50,
         },
         tabBarActiveTintColor: '#0A58CA',
         tabBarInactiveTintColor: 'grey',

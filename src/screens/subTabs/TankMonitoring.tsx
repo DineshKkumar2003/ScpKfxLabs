@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f2f4',
     borderRadius: 30,
     marginTop: 10,
+    marginBottom: '40%',
   },
   sumpsText: {
     fontSize: 14,
