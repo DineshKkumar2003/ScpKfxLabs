@@ -153,6 +153,8 @@ const AssetIssueLog = () => {
           </Table>
         </ScrollView>
       </ScrollView>
+
+      {/* Report a log Screen */}
       <Modal
         animationType="slide"
         transparent={true}
@@ -268,6 +270,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#fff',
     flexGrow: 1,
+    paddingBottom: 150,
   },
   filterContainer: {
     flexDirection: 'row',
