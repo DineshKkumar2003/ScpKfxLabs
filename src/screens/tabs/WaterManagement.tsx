@@ -23,8 +23,8 @@ const categories = [
     image: IMAGES.DASHBOARD,
     screen: 'WaterManagementDasboard',
   },
-  {name: 'Tank Monitoring', image: IMAGES.TANKLOGO, screen: 'TankMonitoring'},
-  {name: 'AssetIssueLog', image: IMAGES.ASSETLOG, screen: 'AssetIssueLog'},
+  {name: 'Tanks', image: IMAGES.TANKLOGO, screen: 'TankMonitoring'},
+  {name: 'IssueLog', image: IMAGES.ASSETLOG, screen: 'AssetIssueLog'},
   {name: 'Reports', image: IMAGES.REPORTS, screen: 'Reports'},
   {name: 'Alerts', image: IMAGES.ALERTS, screen: 'Alerts'},
   {name: 'Indicators', image: IMAGES.INDICATORS, screen: 'Indicators'},
@@ -133,6 +133,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     padding: 20,
   },
 });
