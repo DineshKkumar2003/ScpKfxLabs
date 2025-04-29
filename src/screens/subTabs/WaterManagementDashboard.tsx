@@ -15,6 +15,9 @@ import RNPickerSelect from 'react-native-picker-select';
 import {waterData} from '../../data/dummyData';
 import {tr} from 'date-fns/locale';
 
+import WaterLevelChart from '../charts/waterLevelChart';
+import InflowOutflowChart from '../charts/Inflow-OutflowChart';
+
 const WaterManagementDashboard = () => {
   const navigation = useNavigation();
   const [selectedBuilding, setSelectedBuilding] = useState(null);
@@ -86,7 +89,9 @@ const WaterManagementDashboard = () => {
             />
           </View>
         </View>
+
         {/* Tank Section */}
+        <View style={styles.spaceContainer} />
         <View style={styles.container}>
           <View style={styles.containerHeader}>
             <Text style={styles.containerHeaderText}>Current Water Level </Text>
@@ -109,9 +114,10 @@ const WaterManagementDashboard = () => {
         </View>
 
         {/* Average consumption & Last alert */}
+        <View style={styles.spaceContainer} />
         <View style={styles.wrapperContainer}>
           {/* Average Consumption */}
-          <View style={styles.halfContainer}>
+          <View style={[styles.halfContainer, {marginTop: 0}]}>
             <View style={[styles.container, {backgroundColor: 'white'}]}>
               <View style={styles.containerHeader}>
                 <Text style={styles.containerHeaderText}>
@@ -158,35 +164,27 @@ const WaterManagementDashboard = () => {
         </View>
 
         {/* Water Level */}
+        <View style={styles.spaceContainer} />
         <View style={styles.container}>
           <View style={styles.containerHeader}>
             <Text style={styles.containerHeaderText}>Water Level (%) </Text>
-            <TouchableOpacity>
+            {/* <TouchableOpacity>
               <Text style={[styles.containerHeaderText, {textAlign: 'left'}]}>
                 Custom
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
-          <View style={styles.tankContainer}>
-            <View style={styles.tank}>
-              <View style={[styles.water, {width: `${fillPercentage}%`}]} />
-              <Text style={styles.fill}>{Math.round(fillPercentage)}%</Text>
-              <Text style={styles.name}>
-                {waterData.currentWaterLevel.tankName}
-              </Text>
-              <Ionicons
-                name={isSafe ? 'checkmark-circle' : 'close-circle'}
-                size={15}
-                color={isSafe ? 'green' : 'red'}
-                style={styles.statusIcon}
-              />
-            </View>
-          </View>
+          <WaterLevelChart />
         </View>
+
+        <View style={styles.spaceContainer} />
         <View style={styles.container}>
           <View style={styles.containerHeader}>
-            <Text style={styles.containerHeaderText}>Current Water Level </Text>
+            <Text style={styles.containerHeaderText}>
+              Inflow & Outflow Volume{' '}
+            </Text>
           </View>
+          <InflowOutflowChart />
         </View>
       </ScrollView>
     </View>
@@ -214,7 +212,7 @@ const styles = StyleSheet.create({
   selectionContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 15,
+    // marginBottom: 15,
   },
   selectionItem: {
     flex: 1,
@@ -238,6 +236,9 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: '#FFF7E6',
+    //marginTop: 20,
+  },
+  spaceContainer: {
     marginTop: 20,
   },
 
@@ -246,6 +247,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     width: '100%',
+    marginTop: 0,
   },
   containerHeaderText: {
     textAlign: 'left',
@@ -298,7 +300,7 @@ const styles = StyleSheet.create({
   },
   wrapperContainer: {
     flexDirection: 'row',
-    marginTop: 20,
+    // marginTop: 20,
     justifyContent: 'space-evenly',
     gap: 10,
   },
@@ -306,6 +308,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF7E6',
     //borderRadius: 20,
+    minHeight: 160,
   },
   metric: {
     marginTop: 10,
@@ -346,6 +349,35 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: 'center',
     width: '100%',
+  },
+  chartContainer: {
+    backgroundColor: '#0d1632',
+    //borderRadius: 10,
+    padding: 5,
+    marginTop: 0,
+    marginLeft: 0,
+    position: 'relative',
+  },
+  chartWrapper: {
+    flexDirection: 'row',
+  },
+  chart: {
+    marginRight: 35,
+    left: 0,
+  },
+  percentageContainer: {
+    position: 'absolute',
+    left: 0,
+    top: 10,
+    bottom: 20,
+    justifyContent: 'space-between',
+    width: 30,
+    zIndex: 5,
+  },
+  percentText: {
+    color: 'white',
+    fontSize: 10,
+    textAlign: 'right',
   },
 });
 const pickerSelectStyles = StyleSheet.create({

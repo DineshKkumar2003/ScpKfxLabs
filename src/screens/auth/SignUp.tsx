@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import {RootStackParamList} from '..';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import IMAGES from '../../assets';
+import {IMAGES} from '../../assets';
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {TextInput} from 'react-native-gesture-handler';
@@ -84,7 +84,7 @@ export default SignUp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff7e6',
+    backgroundColor: '#7096D1',
   },
   scrollContainer: {
     flexGrow: 1,
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   signupContainer: {
     width: '85%',
     height: '55%',
-    backgroundColor: 'white',
+    backgroundColor: '#F9FCFF',
     paddingTop: 80,
     paddingHorizontal: 20,
     paddingBottom: 20,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
   },
   button: {
-    backgroundColor: '#0A58CA',
+    backgroundColor: '#081F5C',
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   signupLink: {
-    color: 'blue',
+    color: '#081F5C',
     fontWeight: 'bold',
   },
 });

@@ -15,7 +15,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '..';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import IMAGES from '../../assets';
+import {IMAGES} from '../../assets';
 
 const categories = [
   {
@@ -47,11 +47,11 @@ const WaterManagement = () => {
     </View>
   );
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={{flex: 1, backgroundColor: '#7096D1'}}>
       <SafeAreaView
-        style={{
-          backgroundColor: '#0d1632',
-        }}
+        // style={{
+        //   backgroundColor: '#0d1632',
+        // }}
         edges={['top', 'left', 'right']}
       />
       <StatusBar barStyle="light-content" backgroundColor="#0d1632" />
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     padding: 15,
-    backgroundColor: 'white',
+    backgroundColor: '#7096D1',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   card: {
-    backgroundColor: '#FFF7E6',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     width: 100,

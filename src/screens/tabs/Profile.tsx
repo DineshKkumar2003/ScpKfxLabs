@@ -10,7 +10,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-import IMAGES from '../../assets';
+import {IMAGES} from '../../assets';
 
 const Profile = () => {
   const navigation = useNavigation();

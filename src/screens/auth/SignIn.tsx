@@ -12,7 +12,7 @@ import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '..';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import IMAGES from '../../assets';
+import {IMAGES} from '../../assets';
 const SignIn = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -67,7 +67,7 @@ const SignIn = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff7e6',
+    backgroundColor: '#7096D1',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#0A58CA',
   },
   button: {
-    backgroundColor: '#0A58CA',
+    backgroundColor: '#081F5C',
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     color: '1f1f1f',
   },
   signupLink: {
-    color: 'blue',
+    color: '#081F5C',
     fontWeight: 'bold',
   },
 });
