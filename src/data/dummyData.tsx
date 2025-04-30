@@ -46,3 +46,55 @@ export const lineChart = {
     {time: '18:00', value: 40},
   ],
 };
+export const IndicatorsChartsData = {
+  //Avg Consumption chart data
+  hourly: [
+    300, 700, 800, 1400, 1300, 1000, 2200, 1300, 1100, 1300, 1500, 700, 900,
+    1800, 1900, 1400, 1400, 1400, 1200, 1800, 500, 800, 400, 300,
+  ],
+  weekly: [
+    {day: 'Mon', value: 1200},
+    {day: 'Tue', value: 1000},
+    {day: 'Wed', value: 1300},
+    {day: 'Thu', value: 1100},
+    {day: 'Fri', value: 1500},
+    {day: 'Sat', value: 900},
+    {day: 'Sun', value: 800},
+  ],
+};
+export const outFlowData = {
+  minutes: [
+    {time: '5.00', value: 35},
+    {time: '6.00', value: 45},
+    {time: '7.00', value: 55},
+    {time: '8.00', value: 90},
+    {time: '9.00', value: 45},
+    {time: '10.00', value: 20},
+  ],
+  hours: [
+    {time: '5.00', value: 1000},
+    {time: '6.00', value: 2100},
+    {time: '7.00', value: 1500},
+    {time: '8.00', value: 3000},
+    {time: '9.00', value: 2500},
+    {time: '10.00', value: 300},
+  ],
+};
+export const InFlowData = {
+  minutes: [
+    {time: '5.00', value: 20},
+    {time: '6.00', value: 10},
+    {time: '7.00', value: 40},
+    {time: '8.00', value: 50},
+    {time: '9.00', value: 20},
+    {time: '10.00', value: 30},
+  ],
+  hours: [
+    {time: '5.00', value: 2000},
+    {time: '6.00', value: 700},
+    {time: '7.00', value: 1500},
+    {time: '8.00', value: 2500},
+    {time: '9.00', value: 900},
+    {time: '10.00', value: 1000},
+  ],
+};

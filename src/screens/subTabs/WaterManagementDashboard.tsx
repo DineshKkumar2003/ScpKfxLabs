@@ -168,11 +168,6 @@ const WaterManagementDashboard = () => {
         <View style={styles.container}>
           <View style={styles.containerHeader}>
             <Text style={styles.containerHeaderText}>Water Level (%) </Text>
-            {/* <TouchableOpacity>
-              <Text style={[styles.containerHeaderText, {textAlign: 'left'}]}>
-                Custom
-              </Text>
-            </TouchableOpacity> */}
           </View>
           <WaterLevelChart />
         </View>
@@ -198,7 +193,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 15,
-    //backgroundColor: '#0d1632',
   },
   headerText: {
     fontSize: 18,
@@ -212,7 +206,6 @@ const styles = StyleSheet.create({
   selectionContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // marginBottom: 15,
   },
   selectionItem: {
     flex: 1,
