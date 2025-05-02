@@ -14,6 +14,7 @@ import RNPickerSelect from 'react-native-picker-select';
 import AvgConsumptionChart from '../charts/IndicatorsCharts/AvgConsumption';
 import AverageFlowChart from '../charts/IndicatorsCharts/AverageFlowChart';
 import AlertDistribution from '../charts/IndicatorsCharts/AlertDistribution';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 const Indicators = () => {
   const navigation = useNavigation();
