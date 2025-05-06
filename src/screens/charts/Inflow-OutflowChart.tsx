@@ -133,7 +133,8 @@ const InflowOutflowChart = () => {
                   x={paddingLeft - 10}
                   y={y + 5}
                   fontSize="12"
-                  fill="#8c9db8"
+                  fill="black"
+                  fontWeight="400"
                   textAnchor="end">
                   {tick === 0
                     ? '0'
@@ -182,7 +183,8 @@ const InflowOutflowChart = () => {
                 x={bar.x + bar.width / 2}
                 y={chartHeight - 10}
                 fontSize="12"
-                fill="#8c9db8"
+                fill="black"
+                fontWeight="400"
                 textAnchor="middle">
                 {bar.time}
               </SvgText>
@@ -197,8 +199,14 @@ const InflowOutflowChart = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#001c5c',
+    backgroundColor: '#fff',
     padding: 20,
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   header: {
     flexDirection: 'row',
@@ -224,11 +232,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#4d8fff',
   },
   tabText: {
-    color: '#8c9db8',
-    fontSize: 12,
+    color: '#grey',
+    fontSize: 14,
+    fontWeight: '400',
   },
   activeTabText: {
-    color: '#fff',
+    color: 'black',
+    fontSize: 14,
+    fontWeight: '600',
   },
   chartContainer: {
     height: chartHeight,

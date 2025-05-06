@@ -51,9 +51,9 @@ const WaterManagementDashboard = () => {
     <View style={{backgroundColor: 'white', flex: 1}}>
       <SafeAreaView
         edges={['top', 'left', 'right']}
-        style={{backgroundColor: '#0d1632'}}
+        //style={{backgroundColor: '#0d1632'}}
       />
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color={'black'} />
@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
   selectionContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '100%',
   },
   selectionItem: {
     flex: 1,
@@ -228,8 +229,7 @@ const styles = StyleSheet.create({
     borderColor: '#2d355c',
   },
   container: {
-    backgroundColor: '#FFF7E6',
-    //marginTop: 20,
+    backgroundColor: 'white',
   },
   spaceContainer: {
     marginTop: 20,
@@ -250,10 +250,15 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   tankContainer: {
-    backgroundColor: '#FFF7E6',
+    backgroundColor: '#FFF',
     padding: 20,
-    borderRadius: 20,
     alignItems: 'center',
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
   },
   tank: {
     width: '100%',
@@ -293,26 +298,38 @@ const styles = StyleSheet.create({
   },
   wrapperContainer: {
     flexDirection: 'row',
-    // marginTop: 20,
     justifyContent: 'space-evenly',
     gap: 10,
   },
   halfContainer: {
     flex: 1,
-    backgroundColor: '#FFF7E6',
-    //borderRadius: 20,
+    backgroundColor: '#FFF',
     minHeight: 160,
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
   },
   metric: {
     marginTop: 10,
     alignItems: 'center',
-    borderRadius: 20,
-    backgroundColor: '#FFF7E6',
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
     padding: 5,
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
   },
   label: {
     color: 'black',
     fontSize: 14,
+    fontWeight: '400',
+    marginBottom: 5,
   },
   value: {
     fontSize: 16,
@@ -344,8 +361,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   chartContainer: {
-    backgroundColor: '#0d1632',
-    //borderRadius: 10,
+    backgroundColor: '#fff',
     padding: 5,
     marginTop: 0,
     marginLeft: 0,
@@ -377,7 +393,7 @@ const pickerSelectStyles = StyleSheet.create({
   inputAndroid: {
     color: 'white',
     padding: 10,
-    borderRadius: 5,
+    // borderRadius: 5,
     backgroundColor: '#1a2341',
     borderWidth: 1,
     borderColor: '#2d355c',
@@ -385,7 +401,7 @@ const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
     color: 'white',
     padding: 10,
-    borderRadius: 5,
+    //borderRadius: 5,
     backgroundColor: '#1a2341',
     borderWidth: 1,
     borderColor: '#2d355c',

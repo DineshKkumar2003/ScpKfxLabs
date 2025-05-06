@@ -57,10 +57,7 @@ const Reports = () => {
         backgroundColor: 'white',
         flex: 1,
       }}>
-      <SafeAreaView
-        style={{backgroundColor: '#0d1632'}}
-        edges={['top', 'left', 'right']}
-      />
+      <SafeAreaView edges={['top', 'left', 'right']} />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />

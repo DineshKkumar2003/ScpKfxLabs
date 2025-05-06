@@ -54,11 +54,8 @@ const AssetIssueLog = () => {
   };
   return (
     <View style={{backgroundColor: 'white', flex: 1}}>
-      <SafeAreaView
-        edges={['top', 'left', 'right']}
-        style={{backgroundColor: '#0d1632'}}
-      />
-      <StatusBar barStyle="light-content" />
+      <SafeAreaView edges={['top', 'left', 'right']} />
+      <StatusBar barStyle="dark-content" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -257,7 +254,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   headerbutton: {
-    backgroundColor: '#98A869',
+    backgroundColor: '#0d1632',
     paddingHorizontal: 16,
     justifyContent: 'center',
     borderRadius: 5,
@@ -289,7 +286,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   button: {
-    backgroundColor: '#98A869',
+    backgroundColor: '#0d1632',
     paddingHorizontal: 16,
     justifyContent: 'center',
     borderRadius: 5,
@@ -386,7 +383,7 @@ const styles = StyleSheet.create({
   },
   modalButton: {
     padding: 12,
-    borderRadius: 8,
+    borderRadius: 30,
     width: '48%',
     alignItems: 'center',
   },
@@ -394,7 +391,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF6B6B',
   },
   submitButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#0d1632',
   },
 });
 

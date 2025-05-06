@@ -64,13 +64,8 @@ const TankMonitoring = () => {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <SafeAreaView
-        style={{
-          backgroundColor: '#0d1632',
-        }}
-        edges={['top', 'right', 'left']}
-      />
-      <StatusBar backgroundColor="#od1632" barStyle="light-content" />
+      <SafeAreaView edges={['top', 'right', 'left']} />
+      <StatusBar backgroundColor="#od1632" barStyle="dark-content" />
 
       <View style={styles.header}>
         <View style={styles.headerTop}>
@@ -89,6 +84,8 @@ const TankMonitoring = () => {
           marginTop: 10,
           flexGrow: 1,
           paddingBottom: tabBarheight - 50,
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
         <View style={styles.overHeadTanks}>
           <Text style={styles.ohtText}>Overhead Tanks</Text>
@@ -141,10 +138,16 @@ const styles = StyleSheet.create({
   },
   overHeadTanks: {
     padding: 16,
-    backgroundColor: '#f8f2f4',
+    backgroundColor: '#fff',
     borderRadius: 30,
     marginTop: 10,
-    //flexGrow: 1,
+    width: '95%',
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   ohtText: {
     fontSize: 14,
@@ -193,9 +196,16 @@ const styles = StyleSheet.create({
   },
   sumps: {
     padding: 16,
-    backgroundColor: '#f8f2f4',
+    backgroundColor: '#fff',
     borderRadius: 30,
     marginTop: 10,
+    width: '95%',
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
     marginBottom: '40%',
   },
   sumpsText: {

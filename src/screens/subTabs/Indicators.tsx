@@ -41,11 +41,8 @@ const Indicators = () => {
   }, [selectedBuilding]);
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <SafeAreaView
-        edges={['left', 'top', 'right']}
-        style={{backgroundColor: '#0d1632'}}
-      />
-      <StatusBar barStyle="light-content" />
+      <SafeAreaView edges={['left', 'top', 'right']} />
+      <StatusBar barStyle="dark-content" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color={'black'} />

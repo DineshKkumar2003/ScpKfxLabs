@@ -47,14 +47,14 @@ const WaterManagement = () => {
     </View>
   );
   return (
-    <View style={{flex: 1, backgroundColor: '#7096D1'}}>
+    <View style={{flex: 1, backgroundColor: '#fff'}}>
       <SafeAreaView
         // style={{
         //   backgroundColor: '#0d1632',
         // }}
         edges={['top', 'left', 'right']}
       />
-      <StatusBar barStyle="light-content" backgroundColor="#0d1632" />
+      <StatusBar barStyle="dark-content" backgroundColor="#0d1632" />
 
       {/* Header */}
       <View style={styles.header}>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     padding: 15,
-    backgroundColor: '#7096D1',
+    backgroundColor: '#fff',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },

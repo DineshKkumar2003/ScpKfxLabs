@@ -53,8 +53,17 @@ export default AlertDistribution;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0b132b',
-    padding: 16,
+    backgroundColor: '#fff', // dark background
+    padding: 10,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    marginTop: 10,
+    //zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   header: {
     flexDirection: 'row',
@@ -64,7 +73,7 @@ const styles = StyleSheet.create({
   },
 
   customText: {
-    color: 'white',
+    color: 'black',
     fontSize: 14,
   },
   chartContainer: {
@@ -76,12 +85,12 @@ const styles = StyleSheet.create({
     height: 200,
   },
   label: {
-    color: '#9FA9BC',
+    color: 'black',
     fontSize: 16,
     marginTop: 12,
   },
   labelValue: {
-    color: '#fff',
+    color: 'black',
     fontWeight: '600',
   },
 });

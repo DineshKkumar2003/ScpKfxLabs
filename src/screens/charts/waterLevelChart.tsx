@@ -12,8 +12,6 @@ import {LineChart} from 'react-native-charts-wrapper';
 import {lineChart} from '../../data/dummyData';
 console.log(lineChart);
 
-const {width} = Dimensions.get('window');
-
 const WaterLevelChart = () => {
   const [activeTab, setActiveTab] = useState('Today');
   const tabs = ['Today', 'Custom'];
@@ -52,10 +50,10 @@ const WaterLevelChart = () => {
     granularityEnabled: true,
     granularity: 1,
     position: 'BOTTOM' as any,
-    textColor: processColor('rgba(255, 255, 255, 0.7)'),
+    textColor: processColor('black'),
     textSize: 11,
-    gridColor: processColor('rgba(255, 255, 255, 0.2)'),
-    gridLineWidth: 0.5,
+    gridColor: processColor('black'),
+    gridLineWidth: 1,
     drawGridLines: true,
     drawAxisLine: false,
     avoidFirstLastClipping: true,
@@ -65,10 +63,10 @@ const WaterLevelChart = () => {
     left: {
       axisMinimum: 0,
       axisMaximum: 100,
-      textColor: processColor('rgba(255, 255, 255, 0.7)'),
+      textColor: processColor('black'),
       textSize: 11,
-      gridColor: processColor('rgba(255, 255, 255, 0.2)'),
-      gridLineWidth: 0.75,
+      gridColor: processColor('black'),
+      gridLineWidth: 1,
       drawGridLines: true,
       drawAxisLine: false,
       labelCount: 2,
@@ -108,7 +106,7 @@ const WaterLevelChart = () => {
           chartDescription={{text: ''}}
           legend={{enabled: false}}
           drawGridBackground={false}
-          borderColor={processColor('rgba(255, 255, 255, 0.2)')}
+          borderColor={processColor('rgba(234, 18, 18, 0.2)')}
           borderWidth={0}
           drawBorders={false}
           touchEnabled={true}
@@ -142,8 +140,14 @@ const WaterLevelChart = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a1429',
+    backgroundColor: '#fff',
     padding: 20,
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
   },
   header: {
     flexDirection: 'row',
@@ -169,11 +173,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#4d8fff',
   },
   tabText: {
-    color: '#8c9db8',
-    fontSize: 12,
+    color: '#grey',
+    fontSize: 14,
+    fontWeight: '400',
   },
   activeTabText: {
-    color: '#fff',
+    color: 'black',
+    fontSize: 14,
+    fontWeight: '600',
   },
   chartContainer: {
     height: 260,

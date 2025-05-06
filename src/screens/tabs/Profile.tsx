@@ -37,11 +37,8 @@ const Profile = () => {
         flex: 1,
         backgroundColor: 'white',
       }}>
-      <SafeAreaView
-        style={{backgroundColor: '#0d1632'}}
-        edges={['top', 'left', 'right']}
-      />
-      <StatusBar barStyle="light-content" />
+      <SafeAreaView edges={['top', 'left', 'right']} />
+      <StatusBar barStyle="dark-content" />
 
       <View style={styles.header}>
         <TouchableOpacity
@@ -253,7 +250,7 @@ const styles = StyleSheet.create({
   },
   modalButton: {
     padding: 12,
-    borderRadius: 8,
+    borderRadius: 30,
     width: '48%',
     alignItems: 'center',
   },
@@ -261,6 +258,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF6B6B',
   },
   submitButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#0d1632',
   },
 });

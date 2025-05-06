@@ -84,7 +84,7 @@ export default SignUp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#7096D1',
+    backgroundColor: '#fff',
   },
   scrollContainer: {
     flexGrow: 1,
@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
   signupText: {
     marginTop: 15,
     color: 'black',
+    fontWeight: 'bold',
   },
   signupLink: {
     color: '#081F5C',

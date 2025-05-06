@@ -36,11 +36,8 @@ const Alerts = () => {
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <SafeAreaView
-        edges={['top', 'left', 'right']}
-        style={{backgroundColor: '#0d1632'}}
-      />
-      <StatusBar barStyle="light-content" />
+      <SafeAreaView edges={['top', 'left', 'right']} />
+      <StatusBar barStyle="dark-content" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -135,7 +132,6 @@ const styles = StyleSheet.create({
   pickerWrapper: {
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 8,
     backgroundColor: '#f9f9f9',
     width: 150,
   },

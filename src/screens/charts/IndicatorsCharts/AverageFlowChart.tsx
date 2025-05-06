@@ -49,10 +49,10 @@ const AverageFlowChart = () => {
     granularityEnabled: true,
     granularity: 1,
     position: 'BOTTOM' as any,
-    textColor: processColor('rgba(255, 255, 255, 0.7)'),
-    textSize: 11,
-    gridColor: processColor('rgba(255, 255, 255, 0.2)'),
-    gridLineWidth: 0.5,
+    textColor: processColor('black'),
+    textSize: 12,
+    gridColor: processColor('black'),
+    gridLineWidth: 1,
     drawGridLines: false,
     drawAxisLine: false,
     avoidFirstLastClipping: true,
@@ -61,10 +61,10 @@ const AverageFlowChart = () => {
     left: {
       axisMinimum: 0,
       /// axisMaximum: 3000,
-      textColor: processColor('rgba(255, 255, 255, 0.7)'),
-      textSize: 11,
-      gridColor: processColor('rgba(255, 255, 255, 0.18)'),
-      gridLineWidth: 0.75,
+      textColor: processColor('black'),
+      textSize: 12,
+      gridColor: processColor('black'),
+      gridLineWidth: 1,
       drawGridLines: true,
       drawAxisLine: false,
       labelCount: 3,
@@ -139,8 +139,18 @@ export default AverageFlowChart;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff', // dark background
     padding: 10,
-    backgroundColor: '#0b132b',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    marginTop: 10,
+
+    zIndex: 2,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   tabContainer: {
     flexDirection: 'row',
@@ -155,11 +165,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#4d8fff',
   },
   tabText: {
-    color: 'white',
-    fontSize: 12,
+    color: '#grey',
+    fontSize: 14,
+    fontWeight: '400',
   },
   activeTabText: {
-    color: '#fff',
+    color: 'black',
+    fontSize: 14,
+    fontWeight: '600',
   },
   chart: {
     flex: 1,

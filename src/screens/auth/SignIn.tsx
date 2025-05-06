@@ -67,7 +67,7 @@ const SignIn = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#7096D1',
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
