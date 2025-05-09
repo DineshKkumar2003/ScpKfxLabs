@@ -11,8 +11,8 @@ export type RootStackParamList = {
   ChangePassword: undefined;
 };
 export type BottomTabParamList = {
-  DGMonitoring: undefined;
-  PumpMonitoring: undefined;
-  WaterManagement: undefined;
+  DG: undefined;
+  Pump: undefined;
+  Water: undefined;
   Profile: undefined;
 };

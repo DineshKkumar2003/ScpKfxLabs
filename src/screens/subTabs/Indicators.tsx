@@ -55,6 +55,7 @@ const Indicators = () => {
         {/* Section Container */}
         <View style={styles.selectionContainer}>
           <View style={styles.selectionItem}>
+            <Text style={styles.selectionLabel}>Select Building/Tower:</Text>
             <RNPickerSelect
               placeholder={{label: 'Select Building'}}
               value={selectedBuilding}
@@ -65,6 +66,7 @@ const Indicators = () => {
             />
           </View>
           <View style={styles.selectionItem}>
+            <Text style={styles.selectionLabel}>Select Tank:</Text>
             <RNPickerSelect
               placeholder={{label: 'Select Tank'}}
               value={selectedTank}
@@ -130,6 +132,12 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 10,
   },
+  selectionLabel: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 14,
+    marginBottom: 5,
+  },
   spaceContainer: {
     marginTop: 20,
   },
@@ -155,7 +163,7 @@ const pickerSelectStyles = StyleSheet.create({
   inputAndroid: {
     color: 'white',
     padding: 10,
-    borderRadius: 5,
+    //borderRadius: 5,
     backgroundColor: '#1a2341',
     borderWidth: 1,
     borderColor: '#2d355c',
@@ -163,7 +171,7 @@ const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
     color: 'white',
     padding: 10,
-    borderRadius: 5,
+    // borderRadius: 5,
     backgroundColor: '#1a2341',
     borderWidth: 1,
     borderColor: '#2d355c',

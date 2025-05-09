@@ -36,7 +36,7 @@ const StackNavigation = () => {
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="WaterManagement"
+      initialRouteName="Water"
       screenOptions={{
         tabBarStyle: {
           backgroundColor: 'white',
@@ -54,7 +54,7 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: 'grey',
       }}>
       <Tab.Screen
-        name="DGMonitoring"
+        name="DG"
         component={DGMonitoring}
         options={{
           headerShown: false,
@@ -64,7 +64,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="PumpMonitoring"
+        name="Pump"
         component={PumpMonitoring}
         options={{
           headerShown: false,
@@ -74,7 +74,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="WaterManagement"
+        name="Water"
         component={WaterManagementStack}
         options={{
           headerShown: false,
